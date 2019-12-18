@@ -1,0 +1,36 @@
+<h1>JS Todos</h1>
+
+<div class="row">
+  <div class="col-md-6">
+
+    <form (submit)="addTodo(newTodo.value, $event);newTodo.value=''">
+      <div class="form-group">
+        <input #newTodo type="text" class="form-control" placeholder="Entrez votre todo">
+      </div>
+
+      <ul class="list-group" id="liste-todos">
+        <li class="list-group-item"
+            [class.done]="todo.done"
+            *ngFor="let todo of maMethode()"
+            (click)="toggleTodo(todo)">
+          <img src="/assets/icon-delete.png" class="icon-delete" (click)="deleteTodo(todo, $event)"> {{ todo.text }}
+        </li>
+      </ul>
+
+      <!-- Filtres -->
+      <ul class="nav nav-pills">
+        <li class="nav-item" [class.active]="currentFilter === filterEnum.ALL">
+          <a class="nav-link" href="#" (click)="filterTodos(filterEnum.ALL)">Tous</a>
+        </li>
+        <li class="nav-item" [class.active]="currentFilter === filterEnum.DONE">
+          <a class="nav-link" href="#" (click)="filterTodos(filterEnum.DONE)">Faits</a>
+        </li>
+        <li class="nav-item" [class.active]="currentFilter === filterEnum.NOT_DONE">
+          <a class="nav-link" href="#" (click)="filterTodos(filterEnum.NOT_DONE)">Pas faits</a>
+        </li>
+      </ul>
+
+    </form>
+
+  </div>
+</div>

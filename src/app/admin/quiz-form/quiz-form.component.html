@@ -1,0 +1,21 @@
+<form novalidate [formGroup]= "quizForm" (ngSubmit)="saveQuizForm()">
+
+  <div class="form-group">
+    <label class="control-label">Titre*</label>
+    <input formControlName="title" type="text" class="form-control" placeholder="Titre">
+  </div>
+
+  <div class="form-group">
+    <label class="control-label">Description</label>
+    <textarea formControlName="description" class="form-control" placeholder="Description" rows="3"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label">Peut ré-essayer les questions</label>
+    <input formControlName="canRetryQuestion" type="checkbox">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Enregistrer</button>
+  <a routerLink="..">Annuler</a>
+
+</form>

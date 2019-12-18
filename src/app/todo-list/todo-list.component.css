@@ -1,0 +1,11 @@
+.done {
+  background: rgb(144, 151, 243);
+  text-decoration: line-through;
+}
+.list-group-item {
+  cursor: pointer;
+}
+
+.rouge {
+  color: red;
+}
